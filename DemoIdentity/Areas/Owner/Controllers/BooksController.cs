@@ -14,8 +14,9 @@ using System.Security.Claims;
 
 namespace FPTBook.Areas.Owner.Controllers
 {
-    [Authorize(Roles = "Owner")]
-    [Area("Owner")]
+
+    [Authorize(Roles = "Owner, Admin")]
+    [Area("Owner, Admin")]
     public class BooksController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -26,7 +27,7 @@ namespace FPTBook.Areas.Owner.Controllers
             _context = context;
             _hostEnvironment = hostEnvironment;
         }
-        [Authorize(Roles = "Owner")]
+        [Authorize(Roles = "Owner,Admin")]
         // GET: Books
         public async Task<IActionResult> Index()
         {
@@ -34,7 +35,7 @@ namespace FPTBook.Areas.Owner.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
-        [Authorize(Roles = "User, Owner")]
+        [Authorize(Roles = "User, Owner, Admin")]
         // GET: Books/Details/5
         public async Task<IActionResult> Details(int? id)
         {
