@@ -10,6 +10,8 @@
         bool isOwner = User.IsInRole("Owner");
         if (isAdmin)
         {
+            <li><a asp-area="Admin" asp-controller="TmpCategories" asp-action="Index">tmpCategories</a></li>
+            <li><a asp-area="Admin" asp-controller="Categories" asp-action="Index">Categories</a></li>
             <li><a asp-area="Admin" asp-controller="UsersList" asp-action="Index">User List</a></li>
             <li><a asp-area="Admin" asp-controller="UserRoles" asp-action="Index">User Role</a></li>
             <li><a asp-area="Admin" asp-controller="RoleManager" asp-action="Index">Role Manager</a></li>
@@ -17,6 +19,7 @@
         } 
         else if (isOwner)
         {
+            <li><a asp-area="Owner" asp-controller="TmpCategories" asp-action="Index">tmpCategories</a></li>
             <li><a asp-area="Owner" asp-controller="Categories" asp-action="Index">Categories</a></li>
             <li><a asp-area="Owner" asp-controller="Authors" asp-action="Index">Authors</a></li>
             <li><a asp-area="Owner" asp-controller="PublishingCompanies" asp-action="Index">Publishing</a></li>
@@ -25,9 +28,8 @@
         }
         else
         {
-            <li><a asp-controller="Home" asp-action="Profile">My Account</a></li>
-            <li><a asp-controller="Home" asp-action="Cart">Your Cart</a></li>
-            <li><a asp-controller="Home" asp-action="Checkout">Checkout</a></li>
+            <li><a asp-controller="Cart" asp-action="Index">My Cart</a></li>
+            <li><a asp-controller="Cart" asp-action="Checkout">Checkout</a></li>
         }
 
 

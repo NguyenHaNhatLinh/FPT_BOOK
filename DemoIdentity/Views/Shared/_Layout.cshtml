@@ -23,8 +23,9 @@
     <div id="top-bar" class="container">
         <div class="row">
             <div class="col-4">
-                <form method="POST" class="search_form">
-                    <input type="text" class="form-control" placeholder="eg. T-shirt">
+                <form method="POST" asp-controller="Home" asp-action="Search" class="search_form">
+                    <input type="text" class="form-control" name="searchTerm" placeholder="eg. Book
+">
                 </form>
             </div>
             <div class="col-8">
@@ -37,18 +38,18 @@
 
     <div id="wrapper" class="container">
         <nav class="navbar navbar-expand-lg main-menu">
-            <a href="index.html" class="navbar-brand"><img src="~/themes/images/logo.png" class="site_logo" alt=""></a>
+            <a asp-controller="Home" class="navbar-brand">FPT BOOK</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Homepage</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Shop">Shop</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="About">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Contact">Contact Us</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Help">Help</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Books">Book</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-area="User" asp-controller="Home" asp-action="Index">Homepage</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-area="User" asp-controller="Home" asp-action="Shop">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-area="User" asp-controller="Home" asp-action="About">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-area="User" asp-controller="Home" asp-action="Contact">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-area="User" asp-controller="Home" asp-action="Help">Help</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-area="User" asp-controller="Home" asp-action="Books">Book</a></li>
                 </ul>
             </div>
         </nav>
@@ -78,8 +79,8 @@
                     </ul>
                 </div>
                 <div class="col-md-5">
-                    <p class="logo"><img src="themes/images/logo.png" class="site_logo" alt=""></p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since you.</p>
+@*                     <p class="logo"><img src="themes/images/logo.png" class="site_logo" alt=""></p> *@
+                    @* <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since you.</p> *@
                     <br />
                     <span class="social-icons">
                         <a class="facebook" href="#">Facebook</a>
@@ -92,7 +93,7 @@
         </section>
 
         <section id="copyright">
-            <span>Copyright 2013 bootstrappage template All right reserved.</span>
+            <span>Copyright Thinh-Linh-Can</span>
         </section>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

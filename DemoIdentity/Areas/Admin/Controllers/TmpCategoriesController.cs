@@ -9,10 +9,10 @@ using FPTBook.Models;
 using FPTBookDemo.Data;
 using Microsoft.AspNetCore.Authorization;
 
-namespace FPTBook.Areas.Owner.Controllers
+namespace FPTBook.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Owner")]
-    [Area("Owner")]
+    [Authorize(Roles = "Admin")]
+    [Area("Admin")]
     public class TmpCategoriesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -158,7 +158,7 @@ namespace FPTBook.Areas.Owner.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Approve(int id)
         {
             if (_context.TmpCategory == null)

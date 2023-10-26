@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace FPTBook.Areas.Owner.Controllers
 {
+
     [Authorize(Roles = "Owner")]
     [Area("Owner")]
     public class CategoriesController : Controller
@@ -21,7 +22,7 @@ namespace FPTBook.Areas.Owner.Controllers
         {
             _context = context;
         }
-
+       
         // GET: Categories
         public async Task<IActionResult> Index()
         {
